@@ -2,7 +2,7 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 
-namespace PromatTranslations.Tests.Integration {
+namespace Promat.Translations.Tests.Integration {
     public abstract class BaseIntegrationTest
     {
         protected IConfiguration Configuration { get; set; }

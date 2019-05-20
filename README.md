@@ -39,8 +39,8 @@ OR
   
  ```csharpusing System;
 using System.Threading.Tasks;
-using PromatTranslations;
-using PromatTranslations.Constants;
+using Promat.Translations;
+using Promat.Translations.Constants;
 
 namespace ConsoleApp1
 {

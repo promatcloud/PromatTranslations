@@ -1,4 +1,4 @@
-﻿namespace PromatTranslations.Models {
+﻿namespace Promat.Translations.Models {
     internal class TranslationInternalTuple
     {
         public string Text { get; set; }

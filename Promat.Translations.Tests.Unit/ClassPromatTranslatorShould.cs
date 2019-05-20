@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
-using PromatTranslations.Constants;
+using Promat.Translations.Constants;
 
-namespace PromatTranslations.Tests.Unit
+namespace Promat.Translations.Tests.Unit
 {
     public class ClassPromatTranslatorShould
     {

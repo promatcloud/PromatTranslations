@@ -1,12 +1,12 @@
 ﻿using System;
-using PromatTranslations.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using PromatTranslations.Constants;
+using Promat.Translations.Constants;
+using Promat.Translations.Models;
 
-namespace PromatTranslations
+namespace Promat.Translations
 {
     public static class PromatTranslator
     {
@@ -14,7 +14,7 @@ namespace PromatTranslations
 
         /// <summary>
         /// Configure <see cref="PromatTranslator"/> with <see cref="IConfiguration"/>.
-        /// A key <see cref="Constants.Constants.AzureApiKeyConfigurationKey"/> (AzureApiKey) will be getted from <see cref="IConfiguration"/> in order to configure de the Azure Translator Text API key
+        /// A key <see cref="Constants.AzureApiKeyConfigurationKey"/> (AzureApiKey) will be getted from <see cref="IConfiguration"/> in order to configure de the Azure Translator Text API key
         /// </summary>
         /// <param name="configuration"></param>
         public static void Configure(IConfiguration configuration)

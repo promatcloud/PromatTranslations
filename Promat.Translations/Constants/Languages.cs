@@ -1,4 +1,4 @@
-﻿namespace PromatTranslations.Constants {
+﻿namespace Promat.Translations.Constants {
     public enum Languages
     {
         /// <summary>
