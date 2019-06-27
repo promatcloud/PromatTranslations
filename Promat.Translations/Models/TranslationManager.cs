@@ -9,8 +9,8 @@ namespace Promat.Translations.Models
 {
     public class TranslationManager : Progress<(int currentTranslation, int totalTranslations)>
     {
-        private const string BeginTextNumberPattern = "*{0}*";
-        private const string BeginTextNumberRegularExpression = @"\*.*\d.*\* ?";
+        private const string BeginTextNumberPattern = "%{0}%";
+        private const string BeginTextNumberRegularExpression = @"%.*\d.*% ?";
 
         public string[] TextsToTranslate { get; private set; }
         public Languages LanguageFromTranslate { get; } = Languages.Español;

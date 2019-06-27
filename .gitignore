@@ -9,3 +9,5 @@
 /Promat.Translations.Tests.Integration/obj
 /Promat.Translations.Tests.Unit/bin
 /Promat.Translations.Tests.Unit/obj
+/Promat.Translations/Properties/PublishProfiles
+*.csproj.user
