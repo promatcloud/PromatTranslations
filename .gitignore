@@ -1,0 +1,13 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/PromatTranslations/bin/Debug/netstandard2.0
+/PromatTranslations/obj
+/PromatTranslations.Tests.Integration/bin/Debug/netcoreapp2.2
+/PromatTranslations.Tests.Integration/obj/Debug/netcoreapp2.2
+/PromatTranslations.Tests.Integration/obj/Release/netcoreapp2.2
+/PromatTranslations.Tests.Integration/obj
+/PromatTranslations.Tests.Unit/bin/Debug/netcoreapp2.2
+/PromatTranslations.Tests.Unit/obj

@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 using PromatTranslations.Constants;
 
-namespace PromatTranslations.Tests.Integration {
+namespace PromatTranslations.Tests.Integration
+{
     public class ClassPromatTranslatorShould : BaseIntegrationTest
     {
         [Test]
@@ -26,11 +28,22 @@ namespace PromatTranslations.Tests.Integration {
 
             results.Count.Should().Be(num);
         }
-        
+
         [Test]
         public async Task CanNotificateProgressOfTranslation()
         {
             await PromatTranslator.TranslateAsync(Repository.Get4000CharactersInSomeParagraphs("es").Split(Environment.NewLine), Languages.Ingles,
+                                                  tuple =>
+                                                  {
+                                                      (tuple.currentTranslation <= tuple.totalTranslations).Should().BeTrue();
+                                                  });
+        }
+
+        [Test]
+        public async Task CanTranslateSomeTexts2()
+        {
+            await PromatTranslator.TranslateAsync(Repository.GetRealProblematicIn20190627List(),
+                                                  Languages.Ingles,
                                                   tuple =>
                                                   {
                                                       (tuple.currentTranslation <= tuple.totalTranslations).Should().BeTrue();
