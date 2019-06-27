@@ -3,10 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
-using PromatTranslations.Constants;
-using PromatTranslations.Models;
+using Promat.Translations.Constants;
+using Promat.Translations.Models;
 
-namespace PromatTranslations.Tests.Integration
+namespace Promat.Translations.Tests.Integration
 {
     public class ClassTranslationShould: BaseIntegrationTest
     {

@@ -1,4 +1,4 @@
-﻿namespace PromatTranslations.Models
+﻿namespace Promat.Translations.Models
 {
     public class TranslationInfo
     {

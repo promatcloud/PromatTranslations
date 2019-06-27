@@ -1,10 +1,10 @@
 ﻿using System;
 using FluentAssertions;
 using NUnit.Framework;
-using PromatTranslations.Constants;
-using PromatTranslations.Models;
+using Promat.Translations.Constants;
+using Promat.Translations.Models;
 
-namespace PromatTranslations.Tests.Unit
+namespace Promat.Translations.Tests.Unit
 {
     public class ClassTranslationShould
     {

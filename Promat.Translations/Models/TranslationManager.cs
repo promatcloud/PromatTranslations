@@ -1,11 +1,11 @@
-﻿using PromatTranslations.Constants;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Promat.Translations.Constants;
 
-namespace PromatTranslations.Models
+namespace Promat.Translations.Models
 {
     public class TranslationManager : Progress<(int currentTranslation, int totalTranslations)>
     {

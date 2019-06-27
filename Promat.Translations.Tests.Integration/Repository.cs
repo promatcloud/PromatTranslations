@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using NUnit.Framework;
-using PromatTranslations.Models;
+using Promat.Translations.Models;
 
-namespace PromatTranslations.Tests.Integration
+namespace Promat.Translations.Tests.Integration
 {
     public static class Repository
     {

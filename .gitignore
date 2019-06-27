@@ -3,11 +3,9 @@
 ################################################################################
 
 /.vs
-/PromatTranslations/bin/Debug/netstandard2.0
-/PromatTranslations/obj
-/PromatTranslations.Tests.Integration/bin/Debug/netcoreapp2.2
-/PromatTranslations.Tests.Integration/obj/Debug/netcoreapp2.2
-/PromatTranslations.Tests.Integration/obj/Release/netcoreapp2.2
-/PromatTranslations.Tests.Integration/obj
-/PromatTranslations.Tests.Unit/bin/Debug/netcoreapp2.2
-/PromatTranslations.Tests.Unit/obj
+/Promat.Translations/bin
+/Promat.Translations/obj
+/Promat.Translations.Tests.Integration/bin
+/Promat.Translations.Tests.Integration/obj
+/Promat.Translations.Tests.Unit/bin
+/Promat.Translations.Tests.Unit/obj

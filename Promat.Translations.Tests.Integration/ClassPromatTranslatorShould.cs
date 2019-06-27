@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
-using PromatTranslations.Constants;
+using Promat.Translations.Constants;
 
-namespace PromatTranslations.Tests.Integration
-{
+namespace Promat.Translations.Tests.Integration {
     public class ClassPromatTranslatorShould : BaseIntegrationTest
     {
         [Test]
