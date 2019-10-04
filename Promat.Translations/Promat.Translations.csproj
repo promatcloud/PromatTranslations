@@ -5,6 +5,17 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>Promat.Translations</AssemblyName>
     <RootNamespace>Promat.Translations</RootNamespace>
+    <PackageId>PromatTranslations</PackageId>
+    <Version>1.0.1</Version>
+    <Company>Promat Asesoría técnica de servicios</Company>
+    <Authors>Promat Team</Authors>
+    <Product>PromatTranslations</Product>
+    <Description>Simple library in .net standard 2.0 to translate text using the Azure cognitive services translator (free up to 2M characters per month)</Description>
+    <Copyright>Promat Asesoría técnica de servicios</Copyright>
+    <PackageProjectUrl>https://github.com/promatcloud/PromatTranslations</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/promatcloud/Branding/blob/master/icons/org/promat.512.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/promatcloud/PromatTranslations</RepositoryUrl>
+    <PackageTags>translation traduccion azure-cognitive-services netstandard</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
