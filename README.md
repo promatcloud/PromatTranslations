@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://github.com/promatcloud/Branding/blob/master/icons/org/promat.512.png" alt="promat" width="256"/>
+<img src="https://github.com/promatcloud/Branding/blob/master/icons/PromatTranslations/promatTranslations.512.png" alt="promat" width="256"/>
  <br/>
  PromatTranslations
 </h1>
