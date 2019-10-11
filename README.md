@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://github.com/promatcloud/Branding/blob/master/icons/org/promat.512.png" alt="promat" width="256"/>
+<img src="https://github.com/promatcloud/Branding/blob/master/icons/PromatTranslations/promatTranslations.512.png" alt="promat" width="256"/>
  <br/>
  PromatTranslations
 </h1>
@@ -7,10 +7,13 @@
 <div align="center">
  
 [![Build status](https://ci.appveyor.com/api/projects/status/94tj89iclsyg1c7l?svg=true)](https://ci.appveyor.com/project/promatcloud/promattranslations)
+[![Nuget Downloads](https://buildstats.info/nuget/PromatTranslations)](https://www.nuget.org/packages/PromatTranslations/)
 
 </div>
 
 Simple library in .net standard 2.0 to translate text using the Azure cognitive services translator (free up to 2M characters per month)
+
+PromatTranslations is available from: **NuGet [PromatTranslations](https://www.nuget.org/packages/PromatTranslations)**
 
 # QuickStart
 
