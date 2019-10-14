@@ -49,7 +49,8 @@ OR
  
  ## .NET Core console application example:
   
- ```csharpusing System;
+ ```csharp
+using System;
 using System.Threading.Tasks;
 using Promat.Translations;
 using Promat.Translations.Constants;
