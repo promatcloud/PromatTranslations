@@ -1,10 +1,10 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 using Promat.Translations.Constants;
 using Promat.Translations.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Promat.Translations.Tests.Integration
 {
@@ -22,7 +22,7 @@ namespace Promat.Translations.Tests.Integration
         }
 
         [Test]
-        public async Task CanTranslateParraph()
+        public async Task CanTranslateParagraph()
         {
             var translation = new Translation(Repository.GetParagraph("es"), Languages.Ingles);
             var translatedText = await translation.TranslateAsync();
@@ -47,7 +47,7 @@ namespace Promat.Translations.Tests.Integration
         }
 
         [Test]
-        public async Task CanTranslateParraphToMultipleLanguages()
+        public async Task CanTranslateParagraphToMultipleLanguages()
         {
             var translation = new Translation(Repository.GetParagraph("es"), Languages.Ingles, Languages.Frances, Languages.Italiano, Languages.Portugues);
             var result = await translation.TranslateAsync();
@@ -63,7 +63,7 @@ namespace Promat.Translations.Tests.Integration
         }
 
         [Test]
-        public async Task CanTranslateLongParraphToMultipleLanguages()
+        public async Task CanTranslateLongParagraphToMultipleLanguages()
         {
             var translation = new Translation(Repository.Get4000CharactersInSomeParagraphs("es"), Languages.Ingles, Languages.Frances, Languages.Italiano, Languages.Portugues);
             var result = await translation.TranslateAsync();

@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
+using Promat.Translations.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Promat.Translations.Constants;
 
 namespace Promat.Translations.Models
 {
@@ -75,6 +75,18 @@ namespace Promat.Translations.Models
                     request.Content = new StringContent(TextBody, Encoding.UTF8, "application/json");
 
                     var response = await TranslationStaticResourcesManager.SendAuthorizedAsync(request);
+
+                    // Too Many Requests
+                    if ((int)response.StatusCode == 429)
+                    {
+                        var retryNumber = 0;
+                        do
+                        {
+                            retryNumber++;
+                            await Task.Delay(100 * retryNumber);
+                            response = await TranslationStaticResourcesManager.SendAuthorizedAsync(request);
+                        } while ((int)response.StatusCode == 429 && retryNumber <= 5);
+                    }
 
                     if (!response.IsSuccessStatusCode)
                     {

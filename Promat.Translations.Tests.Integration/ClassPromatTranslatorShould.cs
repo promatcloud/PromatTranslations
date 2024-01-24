@@ -1,11 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 using Promat.Translations.Constants;
+using Promat.Translations.Models;
+using System;
+using System.Threading.Tasks;
 
-namespace Promat.Translations.Tests.Integration {
+namespace Promat.Translations.Tests.Integration
+{
     public class ClassPromatTranslatorShould : BaseIntegrationTest
     {
         [Test]
@@ -15,6 +16,23 @@ namespace Promat.Translations.Tests.Integration {
 
             translatedTexts[0].Should().Be(Repository.GetWord("en"));
             translatedTexts[1].Should().Be(Repository.GetWord2("en"));
+        }
+
+        [Test]
+        public async Task CanTranslateListOfTextsAllLanguages()
+        {
+            var languages = (Languages[])Enum.GetValues(typeof(Languages));
+            var aTraducir = new[] {
+                "Sistema API para el tratamiento de información",
+                "Posibilidad de importar de importar múltiples documentos \"personalizados\" por usuario",
+                "Añadida la información necesaria para el proceso empresarial",
+                "Nuevo comportamiento del condensador de fluzo."
+            };
+
+            var manager = new TranslationManager(aTraducir, languages);
+            var result = await manager.TranslateAsync();
+            result.Should().HaveCount(aTraducir.Length);
+            result.ForEach(t => t.Should().HaveCount(languages.Length));
         }
 
         [Test]

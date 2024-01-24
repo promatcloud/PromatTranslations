@@ -11,3 +11,4 @@
 /Promat.Translations.Tests.Unit/obj
 /Promat.Translations/Properties/PublishProfiles
 *.csproj.user
+*.DotSettings.user

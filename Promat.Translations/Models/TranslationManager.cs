@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Promat.Translations.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Promat.Translations.Constants;
 
 namespace Promat.Translations.Models
 {
     public class TranslationManager : Progress<(int currentTranslation, int totalTranslations)>
     {
-        private const string BeginTextNumberPattern = "%{0}%-";
-        private const string BeginTextNumberRegularExpression = @"%.*\d.*%- ?";
+        private const string BeginTextNumberPattern = "<mark>{0}</mark>";
+        private const string BeginTextNumberRegularExpression = "<mark>.*</mark>?";
 
         public string[] TextsToTranslate { get; private set; }
         public Languages LanguageFromTranslate { get; } = Languages.Español;
@@ -138,6 +138,11 @@ namespace Promat.Translations.Models
                         }
                     }
                 }
+                
+                if (!dicResult.ContainsKey(dicEntry.Key))
+                {
+                    dicResult.Add(dicEntry.Key, new List<string>());
+                }
 
                 if (!string.IsNullOrWhiteSpace(accumulated))
                 {
@@ -145,12 +150,17 @@ namespace Promat.Translations.Models
                 }
             }
 
-            for (int i = 0; i < result.Capacity; i++)
+            for (var i = 0; i < result.Capacity; i++)
             {
                 result.Add(new List<TranslationInfo>());
 
                 foreach (var dicEntry in dicResult)
                 {
+                    if (dicEntry.Value.Count - 1 < i)
+                    {
+                        result[i].Add(new TranslationInfo(dicEntry.Key, string.Empty));
+                        continue;
+                    }
                     var resultText = dicEntry.Value[i];
 
                     if (resultText.EndsWith(Environment.NewLine))
@@ -232,17 +242,17 @@ namespace Promat.Translations.Models
             //var final = string.Empty;
             var result = new List<string>();
 
-            int total = 0;
-            int begin = 0;
-            string valueToCrop = stringParagraph;
+            var total = 0;
+            var begin = 0;
+            var valueToCrop = stringParagraph;
 
             while (total < stringParagraph.Length)
             {
-                int end = lengthParagraph;
+                var end = lengthParagraph;
 
                 if (lengthParagraph < valueToCrop.Length)
                 {
-                    for (int i = end - 1; i > 0; i--)
+                    for (var i = end - 1; i > 0; i--)
                     {
                         if (valueToCrop[i] == ' ' || valueToCrop[i] == '\n' || valueToCrop[i] == '\t')
                         {

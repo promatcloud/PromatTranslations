@@ -18,7 +18,7 @@ namespace Promat.Translations.Tests.Unit {
 
             for (int i = 1; i <= num; i++)
             {
-                preparedText.Any(t => t.Contains($"%{i}%")).Should().BeTrue();
+                preparedText.Any(t => t.Contains($"<mark>{i}</mark>")).Should().BeTrue();
             }
 
             var result = manager.TestRecomposedTranslatedTexts(Repository.GetNewsRawTranslation());
