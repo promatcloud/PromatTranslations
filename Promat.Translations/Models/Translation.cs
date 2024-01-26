@@ -15,6 +15,12 @@ namespace Promat.Translations.Models
         public string LanguageFromTranslate { get; } = "es";
         public string[] LanguagesToTranslate { get; }
         public List<TranslationInfo> TranslatedText { get; private set; }
+        /// <summary>
+        /// Obtiene o establece los milisegundos base para reintentar después de recibir una respuesta de "TooManyRequest".
+        /// El tiempo de espera para el reintento será:  BaseMillisecondsForTooManyRequestRetry * retryNumber + accumulatedDelay.
+        /// Valor por defecto: 200
+        /// </summary>
+        public int BaseMillisecondsForTooManyRequestRetry { get; set; } = 200;
 
         private string UrlToQuery => string.Format(Constants.Constants.TranslationUrl, LanguageFromTranslate) + string.Concat(LanguagesToTranslate.Select(lang => $"&to={lang}"));//&to={1}, LanguageToTranslate);
         private string TextBody => JsonConvert.SerializeObject(new object[] { new { Text = TextToTranslate } });
@@ -70,26 +76,19 @@ namespace Promat.Translations.Models
         {
             if (TranslatedText == null)
             {
+                var rnd = new Random(GetHashCode());
                 using (var request = new HttpRequestMessage(HttpMethod.Post, new Uri(UrlToQuery)))
                 {
                     request.Content = new StringContent(TextBody, Encoding.UTF8, "application/json");
 
                     var response = await TranslationStaticResourcesManager.SendAuthorizedAsync(request);
 
-                    // Too Many Requests
-                    if ((int)response.StatusCode == 429)
-                    {
-                        var retryNumber = 0;
-                        do
-                        {
-                            retryNumber++;
-                            await Task.Delay(100 * retryNumber);
-                            response = await TranslationStaticResourcesManager.SendAuthorizedAsync(request);
-                        } while ((int)response.StatusCode == 429 && retryNumber <= 5);
-                    }
-
                     if (!response.IsSuccessStatusCode)
                     {
+                        if ((int) response.StatusCode == 429)
+                        {
+                            throw new TooManyRequestException();
+                        }
                         throw new HttpRequestException($"The server responded incorrectly. {nameof(response.StatusCode)}: {response.StatusCode}. {nameof(response.ReasonPhrase)}: {response.ReasonPhrase}");
                     }
 

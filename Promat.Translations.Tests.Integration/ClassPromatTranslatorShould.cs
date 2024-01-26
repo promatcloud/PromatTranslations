@@ -12,7 +12,9 @@ namespace Promat.Translations.Tests.Integration
         [Test]
         public async Task CanTranslateSomeTexts()
         {
-            var translatedTexts = await PromatTranslator.TranslateAsync(new[] { Repository.GetWord("es"), Repository.GetWord2("es") }, Languages.Ingles);
+            var translatedTexts =
+                await PromatTranslator.TranslateAsync(new[] { Repository.GetWord("es"), Repository.GetWord2("es") },
+                    Languages.Ingles);
 
             translatedTexts[0].Should().Be(Repository.GetWord("en"));
             translatedTexts[1].Should().Be(Repository.GetWord2("en"));
@@ -22,7 +24,8 @@ namespace Promat.Translations.Tests.Integration
         public async Task CanTranslateListOfTextsAllLanguages()
         {
             var languages = (Languages[])Enum.GetValues(typeof(Languages));
-            var aTraducir = new[] {
+            var aTraducir = new[]
+            {
                 "Sistema API para el tratamiento de información",
                 "Posibilidad de importar de importar múltiples documentos \"personalizados\" por usuario",
                 "Añadida la información necesaria para el proceso empresarial",
@@ -49,22 +52,17 @@ namespace Promat.Translations.Tests.Integration
         [Test]
         public async Task CanNotificateProgressOfTranslation()
         {
-            await PromatTranslator.TranslateAsync(Repository.Get4000CharactersInSomeParagraphs("es").Split(Environment.NewLine), Languages.Ingles,
-                                                  tuple =>
-                                                  {
-                                                      (tuple.currentTranslation <= tuple.totalTranslations).Should().BeTrue();
-                                                  });
+            await PromatTranslator.TranslateAsync(
+                Repository.Get4000CharactersInSomeParagraphs("es").Split(Environment.NewLine), Languages.Ingles,
+                tuple => { (tuple.currentTranslation <= tuple.totalTranslations).Should().BeTrue(); });
         }
 
         [Test]
         public async Task CanTranslateSomeTexts2()
         {
             await PromatTranslator.TranslateAsync(Repository.GetRealProblematicIn20190627List(),
-                                                  Languages.Ingles,
-                                                  tuple =>
-                                                  {
-                                                      (tuple.currentTranslation <= tuple.totalTranslations).Should().BeTrue();
-                                                  });
+                Languages.Ingles,
+                tuple => { (tuple.currentTranslation <= tuple.totalTranslations).Should().BeTrue(); });
         }
     }
 }

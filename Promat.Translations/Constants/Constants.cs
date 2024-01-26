@@ -2,9 +2,10 @@
 {
     public static class Constants
     {
-        public const string TranslationUrl = @"https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from={0}";
-        public const string AuthenticationServiceUrl = @"https://api.cognitive.microsoft.com/sts/v1.0/issueToken";
+        public const string TranslationUrl = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from={0}";
+        public const string AuthenticationServiceUrl = "https://{0}api.cognitive.microsoft.com/sts/v1.0/issueToken";
         public const string AzureApiKeyConfigurationKey = "AzureApiKey";
+        public const string AzureApiRegionConfigurationKey = "AzureApiRegion";
         public const string SubscriptionKeyHeaderKey = "Ocp-Apim-Subscription-Key";
         public const int MaximumCharsToTranslate = 5000;
 

@@ -1,10 +1,11 @@
-﻿using System.Linq;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 using Promat.Translations.Constants;
 using Promat.Translations.Models;
+using System.Linq;
 
-namespace Promat.Translations.Tests.Unit {
+namespace Promat.Translations.Tests.Unit
+{
     public class ClassTranslationManagerShould
     {
         [Test]
@@ -14,7 +15,7 @@ namespace Promat.Translations.Tests.Unit {
             var num = novedadesList.Count;
 
             var manager = new TranslationManager(novedadesList, Languages.Ingles);
-            var preparedText = manager.TestPrepateText();
+            var preparedText = manager.TestPrepareText();
 
             for (int i = 1; i <= num; i++)
             {

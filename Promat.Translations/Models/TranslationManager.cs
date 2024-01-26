@@ -16,6 +16,12 @@ namespace Promat.Translations.Models
         public Languages LanguageFromTranslate { get; } = Languages.Español;
         public Languages[] LanguagesToTranslate { get; private set; }
         public List<List<TranslationInfo>> TranslatedTexts { get; private set; }
+        /// <summary>
+        /// Obtiene o establece los milisegundos base para reintentar después de recibir una respuesta de "TooManyRequest".
+        /// El tiempo de espera para el reintento será:  BaseMillisecondsForTooManyRequestRetry * retryNumber + accumulatedDelay.
+        /// Valor por defecto: 200
+        /// </summary>
+        public int BaseMillisecondsForTooManyRequestRetry { get; set; } = 200;
 
         public TranslationManager(IEnumerable<string> textToTranslate, params Languages[] languagesToTranslate) => CommonConstruction(textToTranslate, languagesToTranslate);
         public TranslationManager(Action<(int currentTranslation, int totalTranslations)> progressChangedHandler, IEnumerable<string> textToTranslate, params Languages[] languagesToTranslate) : base(progressChangedHandler)
@@ -40,37 +46,48 @@ namespace Promat.Translations.Models
 
             var totalTranslations = textsForTranslate.Count;
             var currentTranslation = 0;
-            var translationTasks = new List<Task<List<TranslationInfo>>>();
-            var notificationsTasks = new List<Task>();
-
             foreach (var textToTranslate in textsForTranslate)
             {
-                var translation = new Translation(textToTranslate, LanguageFromTranslate, LanguagesToTranslate);
-
-                var translationTask = translation.TranslateAsync();
-                notificationsTasks.Add(translationTask.ContinueWith(t =>
+                var translation = new Translation(textToTranslate, LanguageFromTranslate, LanguagesToTranslate)
+                    {
+                        BaseMillisecondsForTooManyRequestRetry = BaseMillisecondsForTooManyRequestRetry
+                    };
+                bool shouldRetry;
+                var retryCount = 0;
+                var delay = 0;
+                List<TranslationInfo> translationInfoList = null;
+                do
                 {
-                    currentTranslation++;
-                    OnReport((currentTranslation, totalTranslations));
-                }));
-                translationTasks.Add(translationTask);
-            }
+                    try
+                    {
+                        retryCount++;
+                        translationInfoList = await translation.TranslateAsync();
+                        shouldRetry = false;
+                    }
+                    catch (TooManyRequestException)
+                    {
+                        shouldRetry = true;
+                        delay = BaseMillisecondsForTooManyRequestRetry * retryCount + delay;
+                        await Task.Delay(delay);
+                    }
+                } while (shouldRetry && retryCount <= 10);
 
-            await Task.WhenAll(translationTasks);
-
-            foreach (var translationTask in translationTasks)
-            {
-                rawTranslatedTexts.Add(translationTask.Result);
+                if (shouldRetry)
+                {
+                    throw new TooManyRequestException();
+                }
+                
+                rawTranslatedTexts.Add(translationInfoList);
+                currentTranslation++;
+                OnReport((currentTranslation, totalTranslations));
             }
 
             TranslatedTexts = GetRecomposedTranslatedTexts(rawTranslatedTexts);
 
-            await Task.WhenAll(notificationsTasks);
-
             return TranslatedTexts;
         }
         public List<List<TranslationInfo>> TestRecomposedTranslatedTexts(List<List<TranslationInfo>> rawTranslations) => GetRecomposedTranslatedTexts(rawTranslations);
-        public List<string> TestPrepateText() => PrepareTexts();
+        public List<string> TestPrepareText() => PrepareTexts();
 
         private void CommonConstruction(IEnumerable<string> textToTranslate, Languages[] languagesToTranslate)
         {
@@ -138,7 +155,7 @@ namespace Promat.Translations.Models
                         }
                     }
                 }
-                
+
                 if (!dicResult.ContainsKey(dicEntry.Key))
                 {
                     dicResult.Add(dicEntry.Key, new List<string>());
@@ -285,16 +302,14 @@ namespace Promat.Translations.Models
                 }
 
                 result.Add(stringParagraph.Substring(begin, end).Trim());
-                //final = $"{final}{(!string.IsNullOrWhiteSpace(final) ? Environment.NewLine : "")}{stringParagraph.Substring(begin, end).Trim()}";
 
-                total = total + end;
+                total += end;
                 valueToCrop = stringParagraph.Substring(total).Trim();
                 total = total + stringParagraph.Substring(total).Length - valueToCrop.Length;
 
                 begin = total;
             }
 
-            //return GetParagraphs(final);
             return result.ToArray();
         }
     }
