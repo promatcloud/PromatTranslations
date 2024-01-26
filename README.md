@@ -22,6 +22,8 @@ PromatTranslations is available from: **NuGet [PromatTranslations](https://www.n
  ```csharp
     // Initialize the PromatTranslator with your Azure API Key
     PromatTranslator.ConfigureKey("YOUR_AZURE_TRANSLATOR_API_KEY"); 
+    // Optionally configure the region of the azure "Translator" resource, default assumes "global".
+    PromatTranslator.ConfigureRegionPrefix("westeurope"); 
  ```
 OR
  ```csharp
@@ -39,8 +41,16 @@ OR
     // Choose the original language (Spanish by default)
     PromatTranslator.ConfigureLanguageFrom(Languages.Español);
  ```
+  
+ ## Step 3 (optional): If you want another value, set the base millis for retry API calls
  
- ## Step 3: Translate!!!
+ ```csharp
+    // Choose the base millis (200 by default).
+    // The retry timeout will be: BaseMillisecondsForTooManyRequestRetry * retryNumber + accumulatedDelay
+    PromatTranslator.ConfigureBaseMillisecondsForTooManyRequestRetry(200);
+ ```
+ 
+ ## Step 4: Translate!!!
  
  ```csharp
     // Get the translated text
