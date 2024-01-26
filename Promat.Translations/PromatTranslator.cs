@@ -69,7 +69,10 @@ namespace Promat.Translations
         /// <returns></returns>
         public static async Task<string> TranslateAsync(string textToTranslate, Languages languageToTranslate)
         {
-            var manager = new TranslationManager(new[] { textToTranslate }, _from, new[] { languageToTranslate });
+            var manager = new TranslationManager(new[] { textToTranslate }, _from, new[] { languageToTranslate })
+            {
+                BaseMillisecondsForTooManyRequestRetry = TranslationStaticResourcesManager.GetBaseMillisecondsForTooManyRequestRetry()
+            };
             var result = await manager.TranslateAsync();
             return result.First().First().Text;
         }
@@ -83,7 +86,10 @@ namespace Promat.Translations
         /// <returns></returns>
         public static async Task<string> TranslateAsync(string textToTranslate, Languages languageToTranslate, Action<(int currentTranslation, int totalTranslations)> progressChangedHandler)
         {
-            var manager = new TranslationManager(progressChangedHandler, new[] { textToTranslate }, _from, new[] { languageToTranslate });
+            var manager = new TranslationManager(progressChangedHandler, new[] { textToTranslate }, _from, new[] { languageToTranslate })
+            {
+                BaseMillisecondsForTooManyRequestRetry = TranslationStaticResourcesManager.GetBaseMillisecondsForTooManyRequestRetry()
+            };
             var result = await manager.TranslateAsync();
             return result.First().First().Text;
         }
@@ -96,7 +102,10 @@ namespace Promat.Translations
         /// <returns></returns>
         public static async Task<List<string>> TranslateAsync(IEnumerable<string> textsToTranslate, Languages languageToTranslate)
         {
-            var manager = new TranslationManager(textsToTranslate.ToArray(), _from, new[] { languageToTranslate });
+            var manager = new TranslationManager(textsToTranslate.ToArray(), _from, new[] { languageToTranslate })
+            {
+                BaseMillisecondsForTooManyRequestRetry = TranslationStaticResourcesManager.GetBaseMillisecondsForTooManyRequestRetry()
+            };
             var result = await manager.TranslateAsync();
             return result.Select(item => item.First().Text).ToList();
         }
@@ -110,7 +119,10 @@ namespace Promat.Translations
         /// <returns></returns>
         public static async Task<List<string>> TranslateAsync(IEnumerable<string> textsToTranslate, Languages languageToTranslate, Action<(int currentTranslation, int totalTranslations)> progressChangedHandler)
         {
-            var manager = new TranslationManager(progressChangedHandler, textsToTranslate.ToArray(), _from, new[] { languageToTranslate });
+            var manager = new TranslationManager(progressChangedHandler, textsToTranslate.ToArray(), _from, new[] { languageToTranslate })
+            {
+                BaseMillisecondsForTooManyRequestRetry = TranslationStaticResourcesManager.GetBaseMillisecondsForTooManyRequestRetry()
+            };
             var result = await manager.TranslateAsync();
             return result.Select(item => item.First().Text).ToList();
         }

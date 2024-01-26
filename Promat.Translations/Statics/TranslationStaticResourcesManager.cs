@@ -19,7 +19,7 @@ namespace Promat.Translations
         private static string AzureTranslatorTextApiKey { get; set; }
         private static string AzureTranslatorRegionPrefix { get; set; }
         private static bool _requestingToken = false;
-        private static int BaseMillisecondsForTooManyRequestRetry { get; set; } = 1000;
+        private static int BaseMillisecondsForTooManyRequestRetry { get; set; } = 200;
 
         private static async Task EnsureAuthorizedAsync()
         {
