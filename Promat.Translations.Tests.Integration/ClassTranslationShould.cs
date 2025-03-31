@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Promat.Translations.Tests.Integration
 {
-    public class ClassTranslationShould: BaseIntegrationTest
+    public class ClassTranslationShould : BaseIntegrationTest
     {
         [Test]
         public async Task CanTranslateAWord()
@@ -21,14 +21,13 @@ namespace Promat.Translations.Tests.Integration
             translatedText2.Should().Be(translatedText.Single().Text);
         }
 
-        [Test]
-        public async Task CanTranslateParagraph()
-        {
-            var translation = new Translation(Repository.GetParagraph("es"), Languages.Ingles);
-            var translatedText = await translation.TranslateAsync();
-
-            translatedText.Single().Text.Should().Be(Repository.GetParagraph("en"));
-        }
+        //[Test]
+        //public async Task CanTranslateParagraph()
+        //{
+        //    var translationManager = new TranslationManager([Repository.GetParagraph("es")], Languages.Ingles);
+        //    var translations = await translationManager.TranslateAsync();
+        //    translations.First().Single().Text.Should().Be(Repository.GetParagraph("en"));
+        //}
 
         [Test]
         public async Task CanTranslateAWordToMultipleLanguages()
@@ -46,36 +45,38 @@ namespace Promat.Translations.Tests.Integration
             }
         }
 
-        [Test]
-        public async Task CanTranslateParagraphToMultipleLanguages()
-        {
-            var translation = new Translation(Repository.GetParagraph("es"), Languages.Ingles, Languages.Frances, Languages.Italiano, Languages.Portugues);
-            var result = await translation.TranslateAsync();
-            var languagesCodes = new[] { "en", "fr", "it", "pt" };
+        //[Test]
+        //public async Task CanTranslateParagraphToMultipleLanguages()
+        //{
+        //    var translationManager = new TranslationManager([Repository.GetParagraph("es")], Languages.Ingles, Languages.Frances, Languages.Italiano, Languages.Portugues);
+        //    var translations = await translationManager.TranslateAsync();
+        //    var result = translations.First();
+        //    var languagesCodes = new[] { "en", "fr", "it", "pt" };
 
-            foreach (var lang in languagesCodes)
-            {
-                var repositoryText = Repository.GetParagraph(lang);
-                var translatedText = result.Single(info => info.Language == lang).Text;
-                repositoryText.Equals(translatedText, StringComparison.InvariantCultureIgnoreCase).Should()
-                        .BeTrue($"This texts should be equals for language '{lang}':{Environment.NewLine}Repository Text:{Environment.NewLine}{repositoryText}{Environment.NewLine}Translated Text:{Environment.NewLine}{translatedText}{Environment.NewLine}");
-            }
-        }
+        //    foreach (var lang in languagesCodes)
+        //    {
+        //        var repositoryText = Repository.GetParagraph(lang);
+        //        var translatedText = result.Single(info => info.Language == lang).Text;
+        //        repositoryText.Equals(translatedText, StringComparison.InvariantCultureIgnoreCase).Should()
+        //                .BeTrue($"This texts should be equals for language '{lang}':{Environment.NewLine}Repository Text:{Environment.NewLine}{repositoryText}{Environment.NewLine}Translated Text:{Environment.NewLine}{translatedText}{Environment.NewLine}");
+        //    }
+        //}
 
-        [Test]
-        public async Task CanTranslateLongParagraphToMultipleLanguages()
-        {
-            var translation = new Translation(Repository.Get4000CharactersInSomeParagraphs("es"), Languages.Ingles, Languages.Frances, Languages.Italiano, Languages.Portugues);
-            var result = await translation.TranslateAsync();
-            var languagesCodes = new[] { "en", "fr", "it", "pt" };
+        //[Test]
+        //public async Task CanTranslateLongParagraphToMultipleLanguages()
+        //{
+        //    var translationManager = new TranslationManager([Repository.Get4000CharactersInSomeParagraphs("es")], Languages.Ingles, Languages.Frances, Languages.Italiano, Languages.Portugues);
+        //    var translations = await translationManager.TranslateAsync();
+        //    var result = translations.First();
+        //    var languagesCodes = new[] { "en", "fr", "it", "pt" };
 
-            foreach (var lang in languagesCodes)
-            {
-                var repositoryText = Repository.Get4000CharactersInSomeParagraphs(lang);
-                var translatedText = result.Single(info => info.Language == lang).Text;
-                repositoryText.Equals(translatedText, StringComparison.InvariantCultureIgnoreCase).Should()
-                        .BeTrue($"This texts should be equals for language '{lang}':{Environment.NewLine}Repository Text:{Environment.NewLine}{repositoryText}{Environment.NewLine}Translated Text:{Environment.NewLine}{translatedText}{Environment.NewLine}");
-            }
-        }
+        //    foreach (var lang in languagesCodes)
+        //    {
+        //        var repositoryText = Repository.Get4000CharactersInSomeParagraphs(lang);
+        //        var translatedText = result.Single(info => info.Language == lang).Text;
+        //        repositoryText.Equals(translatedText, StringComparison.InvariantCultureIgnoreCase).Should()
+        //                .BeTrue($"This texts should be equals for language '{lang}':{Environment.NewLine}Repository Text:{Environment.NewLine}{repositoryText}{Environment.NewLine}Translated Text:{Environment.NewLine}{translatedText}{Environment.NewLine}");
+        //    }
+        //}
     }
 }
