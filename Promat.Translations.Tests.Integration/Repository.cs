@@ -1,148 +1,274 @@
 using System.Collections.Generic;
 using Promat.Translations.Models;
 
-namespace Promat.Translations.Tests.Integration
+namespace Promat.Translations.Tests.Integration;
+
+public static class Repository
 {
-    public static class Repository
+    public static List<string> GetRealProblematicIn20190627List() =>
+    [
+        "Archivos de Texto Plano",
+        "Celda",
+        "Si",
+        "No",
+        "'{0}' debería ser una dirección de celda de Excel válida. Ej: A3",
+        "'{0}' debería ser una columna de Excel válida. Ej: AB",
+        "Ficheros",
+        "Fichero",
+        "Fecha Inicio",
+        "Fecha Fin",
+        "Abrir carpeta...",
+        "Abrir fichero...",
+        "Detalle",
+        "Valor",
+        "Guardar en Fichero"
+    ];
+    public static List<string> GetNewsList()
     {
-        public static List<string> GetRealProblematicIn20190627List() =>
-                new List<string>
-                {
-                        "Archivos de Texto Plano",
-                        "Celda",
-                        "Si",
-                        "No",
-                        "'{0}' debería ser una dirección de celda de Excel válida. Ej: A3",
-                        "'{0}' debería ser una columna de Excel válida. Ej: AB",
-                        "Ficheros",
-                        "Fichero",
-                        "Fecha Inicio",
-                        "Fecha Fin",
-                        "Abrir carpeta...",
-                        "Abrir fichero...",
-                        "Detalle",
-                        "Valor",
-                        "Guardar en Fichero"
-                };
-        public static List<string> GetNewsList()
+        return
+        [
+            "¡Destacadas!", "Nueva presentación con leyenda del gráfico \"Síntesis de reparto\"",
+            "Nueva presentación gráfica con iconos e imágenes", "Nuevo sistema de presentación de filtros de informes",
+            "Revisión de visibilidad de gráficas de informe \"Basic Report\"",
+            "Comentarios personalizados al generar informe \"OneShot / Un Vistazo\"",
+            "Comentarios personalizados al generar informe \"Mi Historico (Estado)\"",
+            "Comentarios personalizados al generar informe \"Mi Historico (Lote)\"",
+            "Versión: jueves, 29 de noviembre de 2018",
+            "Scroll en pantalla auditorías cuando no se cumple tamaño mínimo de pantalla",
+            "Informe \"Un Vistazo\" mostrar el numero del valor medio en gráfico por ciclo y estado",
+            "Identificar el número de cerda en gráfico \"datos por ciclo\" pasando el ratón por encima",
+            "Versión: martes, 27 de noviembre de 2018", "Optimización en sistema de instalación",
+            "Error al calcular rangos en informe \"Un Vistazo\"", "Versión: lunes, 26 de noviembre de 2018",
+            "Revisión de traducciones",
+            "Mejoras de optimización y rendimiento", "La aplicación permite modificar las cajas de solo lectura",
+            "Error la intentar sacar un informe que no tiene datos                                                                                                                                                                                                         ",
+            "Versión: viernes, 16 de noviembre de 2018",
+            "Mostrar el usuario con el que se conectó en la barra de la aplicación                                                                                                                                            ",
+            "Quitar hora de los informes y reducir tamaño de letra",
+            "Mostrar 5 columnas en las secciones de \"Informes\" y de \"Configuración\" del \"Panel de inicio\"",
+            "Incluir informes \"OneShot / Un Vistazo\", \"Mi Historico (Lote)\" y \"Mi Historico (Estado)\" en el menú \"Informes\"",
+            "Error en cálculo de perdidas en informe \"Mi Historico (Lote)\"",
+            "Nuevo acceso a la captación de ecógrafo en Panel de Inicio",
+            "Error al seleccionar un valor inexistente durante una búsqueda en las cajas de ayuda",
+            "Poder indicar en informe \"OneShot / Un vistazo\" si se muestra el comentario",
+            "Poder indicar en informe \"Mi Historico (Estado)\" si se muestra el comentario",
+            "Poder indicar en informe \"Mi Historico (Lote)\" si se muestra el comentario",
+            "Pantalla de gestión de comentarios de informes",
+            "Borrado múltiple de líenas en auditorías ",
+            "No mostrar la hora de la fecha de medición en los selectores de auditoria",
+            "Al cambiar la fecha de medición no se refresca en el buscador",
+            "Mensaje informativo al asignar una imagen a una empresa",
+            "Error al borrar Usuarios",
+            "Exportación y visualización aumentada de \"Indicador general de estado corporal\" e \"Indicador general de homogeneidad\"",
+            "Cambiar <= por símbolo combinado en informes                                                                                                                                      ",
+            "Cambiar literal \"m/m\" por \"mm\" en informes",
+            "Error al guardar \"Mis Filtros\" en informe \"Mi Historico (Estado)\"",
+            "Error al guardar \"Mis Filtros\" en informe \"Mi Historico (Lote)\"",
+            "Error al guardar \"Mis Filtros\" en informe \"OneShot / Un Vistazo\"",
+            "Mostrar rango correcto centrado en \"Indicador general de estado corporal\"",
+            "Pantalla de errores en Excel que sea maximizable y redimensionable",
+            "Versión: jueves, 27 de septiembre de 2018", "Sistema de importación Excel Ecógrafo (Beta)",
+            "Versión: miércoles, 26 de septiembre de 2018",
+            "Traspasar información de animales por lote de la granja a la auditoría al crearla                                                                                                                                                                   ",
+            "Calculadora de un sólo lote llamar desde pantalla auditorías                                                                                                                     ",
+            "Traducciones, optimizaciones y errores menores", "Nuevo campo tamaño lote en Granja",
+            "Calculadora simple para un sólo lote", "Traducción opciones OneShot",
+            "Versión: lunes, 24 de septiembre de 2018",
+            "Migración aplicación a nuevo estandar Microsft FrameWork 4.7.2",
+            "Validación de datos en tiempo real (mientras se escriben)",
+            "Error en traducción de validadores                                                                                                                                      ",
+            "Mostrar pregunta al abondonar la aplicación",
+            "Captación excel comenzar el fila 2 por defecto                                                                                                                                             ",
+            "Error en cálculo de media ponderada en límites con diferentes Grupos de Ciclo",
+            "Error calculando limites para Multiparas en listados Condicion Corporal, Auditoría gráficos, Comparativa auditoría                                                                                                                                            ",
+            "Error al pedir cambio de contraseña en siguiente inicio de sesión",
+            "Indicador BoxPlot con ayuda incrustada", "Informe de dispersión", "Optimización de velocidad listados",
+            "Nuevo listado \"Mi Histórico(estado)\"", "Gráfico de síntesis de reparto",
+            "Ampliación de demografía ideal a 7+", "Nueva maquetación de informes de la aplicación",
+            "Nuevo diseño listado \"Básico\"", "Nuevo listado \"One Shot\"", "Nuevo listado \"Mi Histórico(lote)\"",
+            "Selector de temas que solo muestre la vista preliminar de la pantalla",
+            "Eliminar menú \"anchor status\" para que no desconfigure grids",
+            "Pantalla de genéticas bloquear las columnas para que no se muevan",
+            "Pantalla de Genéticas pasar a cursiva las columnas de solo lectura",
+            "Soporte para pantallas con escalado DPI Windows",
+            "Error en redimensionamiento de reports en pantallas con escalado Windows",
+            "No muestra el cargar configuración y guardar en Grids", "Nuevo diseño de Panel de Inicio",
+            "Logotipo de empresa en listados OneShot, Mi Histórico y Básico",
+            "Imágenes de logotipo configurable en empresa", "Versión: jueves, 28 de junio de 2018",
+            "Implementación y uso de certificación de código. ",
+            "Errorres y mejoras de rendimiento/renderización de pantallas",
+            "Nuevo orden de introducción de datos de auditoría",
+            "Buscador de auditorías que se inicie oculto a menos que el usuario especifique otro comportamiento",
+            "En el panel de inicio mostrar la barra de desplazamiento debajo cuando la resolución de la pantalla sea pequeña",
+            "Cambiar orden de auxiliares dentro del menú y poner antes el \"Estado\" que la \"Genética\"",
+            "Poder crear auxiliares desde las pantallas de búsqueda asociadas",
+            "No se muestran los colores en el encabezado de los limites de referencia de auditorías",
+            "No vacía correctamente el estado en los límites de referencia de la pantalla genéticas",
+            "Incluir en listado \"Mi Histórico\" el estado de la cerda y filtrar la información por estado de la cerda.",
+            "Versión: jueves, 14 de junio de 2018",
+            "No deja vaciar correctamente la información de granja y estado en los limites de referencia por genética",
+            "Gráficos de listados básicos mismas tamaños de letra y leyendas que en pantalla y tamaño proporcional a las dimensiones del folio de impresión.",
+            "Versión: viernes, 8 de junio de 2018",
+            "En importador de Excel si el usuario tiene hojas vacías genera error",
+            "Versión Beta de traducción al idioma francés", "Visión \"Mi Histórico\" con información en tiempo real",
+            "No se activa el Guardar/Cancelar al modificar detalles de genéticas",
+            "Error al realizar busquedas en los Grid con las cajas de ayuda",
+            "Barra de botones \"Favoritos\" anclable y configurable a modo \"Barra de herramientas\"",
+            "Agrupar la lista de mejoras por fecha en lugar de por fecha y hora",
+            "Pantalla de Panel de Inicio para granjero", "Pantalla de Panel de Inicio para usuarios",
+            "Nuevo diseño de aplicación", "No se posiciona el foco en la casilla de Login",
+            "No se muestra el menú \"Acerca\"",
+            "Borrar representación de límites EGD y EMD de la pantalla la auditoria",
+            "Gráfico evolución por ciclo y estado. No ordena correctamente por estado",
+            "Gráfico de media que aparezca el rango medio siempre centrado",
+            "Incluir unidades en los ejes de los gráficos",
+            "Gráfico BoxPlot. La columna de distribución aceptable debe ir en escala de grises",
+            "Exportador Múltiple a Excel que renombre las columnas de límites según configuración elegida",
+            "Traducciones varias", "Notificador de expiración de puesto vía email",
+            "Diferente orden de conceptos de búsqueda en buscador de auditorías",
+            "Visión \"Tiempo Real\" en formato asistente", "Mejoras visuales y de rendimiento",
+            "Informes Tiempo Real poder guardar filtros", "Selector de hojas para importador de Excel",
+            "Versión: jueves, 17 de mayo de 2018",
+            "Implementación de derechos y control de acceso para \"Granjeros\", \"Técnicos\" y \"Nutricionistas\"",
+            "Cuando solo se tiene derecho para consultar una granja que se cargue automaticamente al añadir una auditoría",
+            "Sistema de ayudas e información para gráficos",
+            "Presentación de patas de BoxPlot a misma altura que gráficos de barras",
+            "En BoxPlot EGD cambios en colores parametrizables",
+            "Revisión de titulos y encabezados de gráficos de la aplicación",
+            "Incluir la descripción del filtro en los informes",
+            "Representación del valor obtenido en el indicador de media (correcto, graso, etc.)",
+            "Informe básico incluir literal \"Commentaries and advises\" para la información de comentario",
+            "Cambio de diseño, rangos, etc. del indicador de Coeficiente de variación",
+            "Interpretación de músculo (EGD) parametrizable (colores y descripciones de estados)",
+            "Redimensionamiento automática de las pantallas de ayuda y selección de datos",
+            "Validación de datos al navegar por los búscadores",
+            "Sistema de instalación poder recuperar un puesto desactivado por código de instalación",
+            "Poder guardar configuraciones del Exportador Múltiple a Excel", "Generación de aplicaciones de tipo TEST",
+            "Informe básico incluir información del número de animales auditados y número de animales del lote",
+            "Pantalla de auditía incluir la información del número de animales",
+            "Desactivar funcionalidades de auditoría y genética cuando el buscador está vacío",
+            "Filtro por información de detalle en estadísticas de auditoría", "Botón para plegar el árbol de seguridad",
+            "Presentación de Roles de seguridad en formato Pestaña",
+            "Exportación múltiple a Excel bloquea el cerrar la aplicación",
+            "Exportación de Grids a Excel poder guardar configuraciones",
+            "Sistema de notificación de fechas de expiración para los administradores de licencias",
+            "Indicador de media nuevos límites y gama de colores",
+            "Nuevos límites en gráfico de Coeficiente de variación",
+            "Control de duplicidad de puestos en sistema de instalación y ejecución",
+            "Gráficos barras referencias en forma de líneas finas horizontales de los porcentajes que se consideran correctos                                               ",
+            "Versión: lunes, 2 de abril de 2018", "Errores menores, traducciones y optimización de aplicación",
+            "Presentación de posibles errores durante el proceso de instalación",
+            "Información de demografía ideal en pantalla de configuración",
+            "Nueva estadística de evolución por ciclo y estado de las cerdas",
+            "Estadísticas prefiltradas con información de auditoría actual",
+            "Nuevas columnas en selector de auditorías", "Selector de Lotes para informe y búsquedas",
+            "Nueva informe y pantalla de auditoría básica", "Eliminación de gráfico de estado corporal",
+            "Nuevo informe que muestra en un solo gráfico los valores correctos", "EMD nuevo rango hasta Ideal",
+            "Exportador de múltiples auditorías a Excel", "Botón para duplicar auditorías",
+            "Valor mínimo BoxPlot EGD estipulado a 5", "Configuración de valores ideales para BoxPlot",
+            "Gráfico BoxPlot nueva barra con valores ideales",
+            "Cambio de cálculo de colores en indicador de media de auditorías",
+            "Cambio de cálculo de rangos en indicador de media de auditorías",
+            "Derechos de Acceso y Escritura en pantallas principales", "Filtro de auditorías por Grupo de ciclo",
+            "Presentación de valores de la aplicación con un decimal", "Versión: miércoles, 14 de marzo de 2018",
+            "Errores y mejoras de rendimiento", "Errores en traducciones",
+            "NUEVO SISTEMA DE GESTIÓN DE LICENCIAS E INSTALACIONES EN: https://controlpanel.promatcloud.com",
+            "Posibilidad de limitar el acceso de un usuario a los datos de determinadas granjas",
+            "Versión: lunes, 26 de febrero de 2018", "Nuevo diseño de pantalla de auditorías",
+            "Módulo de informes básico para auditoría", "Versión: jueves, 22 de febrero de 2018",
+            "Errores y correcciones", "Nuevo filtro de selección múltiple de auditorías en estadísticas",
+            "Característica para poder guardar y cargar filtros de consultas en estadísticas",
+            "Botón para duplicar una genética",
+            "NUEVO SISTEMA DE INSTALACIÓN EN ENTORNOS SIN DERECHOS DE ADMINISTRADOR", "Mejoras varias",
+            "Asociar una genética a una granja", "Revisión de número de decimales en auditoría",
+            "Característica para poder configurar límites por genética / estado en una granja determinada",
+            "Gestión de operadores", "Indicador promedio", "Indicador coeficiente variación",
+            "Versión: viernes, 29 de diciembre de 2017", "Ayudas en la introducción de datos",
+            "Errores y mejoras de rendimientos", "Buscador avanzado de auditorías",
+            "Limites por grupo de ciclo en lugar de por ciclo", "Pantalla de gestión de roles",
+            "Estadística auditoría gráficos", "Estadística Auditoría detalle"
+        ];
+    }
+    public static string GetWord(string lang)
+    {
+        switch (lang)
         {
-            return new List<string>
-            {
-                    "¡Destacadas!", "Nueva presentación con leyenda del gráfico \"Síntesis de reparto\"",
-                    "Nueva presentación gráfica con iconos e imágenes", "Nuevo sistema de presentación de filtros de informes",
-                    "Revisión de visibilidad de gráficas de informe \"Basic Report\"", "Comentarios personalizados al generar informe \"OneShot / Un Vistazo\"",
-                    "Comentarios personalizados al generar informe \"Mi Historico (Estado)\"",
-                    "Comentarios personalizados al generar informe \"Mi Historico (Lote)\"", "Versión: jueves, 29 de noviembre de 2018",
-                    "Scroll en pantalla auditorías cuando no se cumple tamaño mínimo de pantalla",
-                    "Informe \"Un Vistazo\" mostrar el numero del valor medio en gráfico por ciclo y estado",
-                    "Identificar el número de cerda en gráfico \"datos por ciclo\" pasando el ratón por encima",
-                    "Versión: martes, 27 de noviembre de 2018", "Optimización en sistema de instalación",
-                    "Error al calcular rangos en informe \"Un Vistazo\"", "Versión: lunes, 26 de noviembre de 2018", "Revisión de traducciones",
-                    "Mejoras de optimización y rendimiento", "La aplicación permite modificar las cajas de solo lectura",
-                    "Error la intentar sacar un informe que no tiene datos                                                                                                                                                                                                         ",
-                    "Versión: viernes, 16 de noviembre de 2018", "Mostrar el usuario con el que se conectó en la barra de la aplicación                                                                                                                                            ",
-                    "Quitar hora de los informes y reducir tamaño de letra",
-                    "Mostrar 5 columnas en las secciones de \"Informes\" y de \"Configuración\" del \"Panel de inicio\"",
-                    "Incluir informes \"OneShot / Un Vistazo\", \"Mi Historico (Lote)\" y \"Mi Historico (Estado)\" en el menú \"Informes\"",
-                    "Error en cálculo de perdidas en informe \"Mi Historico (Lote)\"", "Nuevo acceso a la captación de ecógrafo en Panel de Inicio",
-                    "Error al seleccionar un valor inexistente durante una búsqueda en las cajas de ayuda",
-                    "Poder indicar en informe \"OneShot / Un vistazo\" si se muestra el comentario",
-                    "Poder indicar en informe \"Mi Historico (Estado)\" si se muestra el comentario",
-                    "Poder indicar en informe \"Mi Historico (Lote)\" si se muestra el comentario", "Pantalla de gestión de comentarios de informes",
-                    "Borrado múltiple de líenas en auditorías ", "No mostrar la hora de la fecha de medición en los selectores de auditoria",
-                    "Al cambiar la fecha de medición no se refresca en el buscador", "Mensaje informativo al asignar una imagen a una empresa",
-                    "Error al borrar Usuarios",
-                    "Exportación y visualización aumentada de \"Indicador general de estado corporal\" e \"Indicador general de homogeneidad\"",
-                    "Cambiar <= por símbolo combinado en informes                                                                                                                                      ",
-                    "Cambiar literal \"m/m\" por \"mm\" en informes", "Error al guardar \"Mis Filtros\" en informe \"Mi Historico (Estado)\"",
-                    "Error al guardar \"Mis Filtros\" en informe \"Mi Historico (Lote)\"",
-                    "Error al guardar \"Mis Filtros\" en informe \"OneShot / Un Vistazo\"",
-                    "Mostrar rango correcto centrado en \"Indicador general de estado corporal\"",
-                    "Pantalla de errores en Excel que sea maximizable y redimensionable",
-                    "Versión: jueves, 27 de septiembre de 2018", "Sistema de importación Excel Ecógrafo (Beta)",
-                    "Versión: miércoles, 26 de septiembre de 2018", "Traspasar información de animales por lote de la granja a la auditoría al crearla                                                                                                                                                                   ", "Calculadora de un sólo lote llamar desde pantalla auditorías                                                                                                                     ", "Traducciones, optimizaciones y errores menores", "Nuevo campo tamaño lote en Granja", "Calculadora simple para un sólo lote", "Traducción opciones OneShot", "Versión: lunes, 24 de septiembre de 2018", "Migración aplicación a nuevo estandar Microsft FrameWork 4.7.2", "Validación de datos en tiempo real (mientras se escriben)", "Error en traducción de validadores                                                                                                                                      ", "Mostrar pregunta al abondonar la aplicación", "Captación excel comenzar el fila 2 por defecto                                                                                                                                             ", "Error en cálculo de media ponderada en límites con diferentes Grupos de Ciclo", "Error calculando limites para Multiparas en listados Condicion Corporal, Auditoría gráficos, Comparativa auditoría                                                                                                                                            ", "Error al pedir cambio de contraseña en siguiente inicio de sesión", "Indicador BoxPlot con ayuda incrustada", "Informe de dispersión", "Optimización de velocidad listados", "Nuevo listado \"Mi Histórico(estado)\"", "Gráfico de síntesis de reparto", "Ampliación de demografía ideal a 7+", "Nueva maquetación de informes de la aplicación", "Nuevo diseño listado \"Básico\"", "Nuevo listado \"One Shot\"", "Nuevo listado \"Mi Histórico(lote)\"", "Selector de temas que solo muestre la vista preliminar de la pantalla", "Eliminar menú \"anchor status\" para que no desconfigure grids", "Pantalla de genéticas bloquear las columnas para que no se muevan", "Pantalla de Genéticas pasar a cursiva las columnas de solo lectura", "Soporte para pantallas con escalado DPI Windows", "Error en redimensionamiento de reports en pantallas con escalado Windows", "No muestra el cargar configuración y guardar en Grids", "Nuevo diseño de Panel de Inicio", "Logotipo de empresa en listados OneShot, Mi Histórico y Básico", "Imágenes de logotipo configurable en empresa", "Versión: jueves, 28 de junio de 2018", "Implementación y uso de certificación de código. ", "Errorres y mejoras de rendimiento/renderización de pantallas", "Nuevo orden de introducción de datos de auditoría", "Buscador de auditorías que se inicie oculto a menos que el usuario especifique otro comportamiento", "En el panel de inicio mostrar la barra de desplazamiento debajo cuando la resolución de la pantalla sea pequeña", "Cambiar orden de auxiliares dentro del menú y poner antes el \"Estado\" que la \"Genética\"", "Poder crear auxiliares desde las pantallas de búsqueda asociadas", "No se muestran los colores en el encabezado de los limites de referencia de auditorías", "No vacía correctamente el estado en los límites de referencia de la pantalla genéticas", "Incluir en listado \"Mi Histórico\" el estado de la cerda y filtrar la información por estado de la cerda.", "Versión: jueves, 14 de junio de 2018", "No deja vaciar correctamente la información de granja y estado en los limites de referencia por genética", "Gráficos de listados básicos mismas tamaños de letra y leyendas que en pantalla y tamaño proporcional a las dimensiones del folio de impresión.", "Versión: viernes, 8 de junio de 2018", "En importador de Excel si el usuario tiene hojas vacías genera error", "Versión Beta de traducción al idioma francés", "Visión \"Mi Histórico\" con información en tiempo real", "No se activa el Guardar/Cancelar al modificar detalles de genéticas", "Error al realizar busquedas en los Grid con las cajas de ayuda", "Barra de botones \"Favoritos\" anclable y configurable a modo \"Barra de herramientas\"", "Agrupar la lista de mejoras por fecha en lugar de por fecha y hora", "Pantalla de Panel de Inicio para granjero", "Pantalla de Panel de Inicio para usuarios", "Nuevo diseño de aplicación", "No se posiciona el foco en la casilla de Login", "No se muestra el menú \"Acerca\"", "Borrar representación de límites EGD y EMD de la pantalla la auditoria", "Gráfico evolución por ciclo y estado. No ordena correctamente por estado", "Gráfico de media que aparezca el rango medio siempre centrado", "Incluir unidades en los ejes de los gráficos", "Gráfico BoxPlot. La columna de distribución aceptable debe ir en escala de grises", "Exportador Múltiple a Excel que renombre las columnas de límites según configuración elegida", "Traducciones varias", "Notificador de expiración de puesto vía email", "Diferente orden de conceptos de búsqueda en buscador de auditorías", "Visión \"Tiempo Real\" en formato asistente", "Mejoras visuales y de rendimiento", "Informes Tiempo Real poder guardar filtros", "Selector de hojas para importador de Excel", "Versión: jueves, 17 de mayo de 2018", "Implementación de derechos y control de acceso para \"Granjeros\", \"Técnicos\" y \"Nutricionistas\"", "Cuando solo se tiene derecho para consultar una granja que se cargue automaticamente al añadir una auditoría", "Sistema de ayudas e información para gráficos", "Presentación de patas de BoxPlot a misma altura que gráficos de barras", "En BoxPlot EGD cambios en colores parametrizables", "Revisión de titulos y encabezados de gráficos de la aplicación", "Incluir la descripción del filtro en los informes", "Representación del valor obtenido en el indicador de media (correcto, graso, etc.)", "Informe básico incluir literal \"Commentaries and advises\" para la información de comentario", "Cambio de diseño, rangos, etc. del indicador de Coeficiente de variación", "Interpretación de músculo (EGD) parametrizable (colores y descripciones de estados)", "Redimensionamiento automática de las pantallas de ayuda y selección de datos", "Validación de datos al navegar por los búscadores", "Sistema de instalación poder recuperar un puesto desactivado por código de instalación", "Poder guardar configuraciones del Exportador Múltiple a Excel", "Generación de aplicaciones de tipo TEST", "Informe básico incluir información del número de animales auditados y número de animales del lote", "Pantalla de auditía incluir la información del número de animales", "Desactivar funcionalidades de auditoría y genética cuando el buscador está vacío", "Filtro por información de detalle en estadísticas de auditoría", "Botón para plegar el árbol de seguridad", "Presentación de Roles de seguridad en formato Pestaña", "Exportación múltiple a Excel bloquea el cerrar la aplicación", "Exportación de Grids a Excel poder guardar configuraciones", "Sistema de notificación de fechas de expiración para los administradores de licencias", "Indicador de media nuevos límites y gama de colores", "Nuevos límites en gráfico de Coeficiente de variación", "Control de duplicidad de puestos en sistema de instalación y ejecución", "Gráficos barras referencias en forma de líneas finas horizontales de los porcentajes que se consideran correctos                                               ", "Versión: lunes, 2 de abril de 2018", "Errores menores, traducciones y optimización de aplicación", "Presentación de posibles errores durante el proceso de instalación", "Información de demografía ideal en pantalla de configuración", "Nueva estadística de evolución por ciclo y estado de las cerdas", "Estadísticas prefiltradas con información de auditoría actual", "Nuevas columnas en selector de auditorías", "Selector de Lotes para informe y búsquedas", "Nueva informe y pantalla de auditoría básica", "Eliminación de gráfico de estado corporal", "Nuevo informe que muestra en un solo gráfico los valores correctos", "EMD nuevo rango hasta Ideal", "Exportador de múltiples auditorías a Excel", "Botón para duplicar auditorías", "Valor mínimo BoxPlot EGD estipulado a 5", "Configuración de valores ideales para BoxPlot", "Gráfico BoxPlot nueva barra con valores ideales", "Cambio de cálculo de colores en indicador de media de auditorías", "Cambio de cálculo de rangos en indicador de media de auditorías", "Derechos de Acceso y Escritura en pantallas principales", "Filtro de auditorías por Grupo de ciclo", "Presentación de valores de la aplicación con un decimal", "Versión: miércoles, 14 de marzo de 2018", "Errores y mejoras de rendimiento", "Errores en traducciones", "NUEVO SISTEMA DE GESTIÓN DE LICENCIAS E INSTALACIONES EN: https://controlpanel.promatcloud.com", "Posibilidad de limitar el acceso de un usuario a los datos de determinadas granjas", "Versión: lunes, 26 de febrero de 2018", "Nuevo diseño de pantalla de auditorías", "Módulo de informes básico para auditoría", "Versión: jueves, 22 de febrero de 2018", "Errores y correcciones", "Nuevo filtro de selección múltiple de auditorías en estadísticas", "Característica para poder guardar y cargar filtros de consultas en estadísticas", "Botón para duplicar una genética", "NUEVO SISTEMA DE INSTALACIÓN EN ENTORNOS SIN DERECHOS DE ADMINISTRADOR", "Mejoras varias", "Asociar una genética a una granja", "Revisión de número de decimales en auditoría", "Característica para poder configurar límites por genética / estado en una granja determinada", "Gestión de operadores", "Indicador promedio", "Indicador coeficiente variación", "Versión: viernes, 29 de diciembre de 2017", "Ayudas en la introducción de datos", "Errores y mejoras de rendimientos", "Buscador avanzado de auditorías", "Limites por grupo de ciclo en lugar de por ciclo", "Pantalla de gestión de roles", "Estadística auditoría gráficos", "Estadística Auditoría detalle"
-            };
+            case "es":
+                return "Hola";
+            case "en":
+                return "Hello";
+            case "fr":
+                return "Bonjour";
+            case "it":
+                return "ciao";
+            case "pt":
+                return "Olá";
+            default:
+                return string.Empty;
         }
-        public static string GetWord(string lang)
+    }
+    public static string GetWord2(string lang)
+    {
+        switch (lang)
         {
-            switch (lang)
-            {
-                case "es":
-                    return "Hola";
-                case "en":
-                    return "Hello";
-                case "fr":
-                    return "Bonjour";
-                case "it":
-                    return "ciao";
-                case "pt":
-                    return "Olá";
-                default:
-                    return string.Empty;
-            }
+            case "es":
+                return "Adiós";
+            case "en":
+                return "Goodbye";
+            case "fr":
+                return "Au revoir";
+            case "it":
+                return "Arrivederci";
+            case "pt":
+                return "Até logo";
+            default:
+                return string.Empty;
         }
-        public static string GetWord2(string lang)
+    }
+    public static string GetParagraph(string lang)
+    {
+        switch (lang)
         {
-            switch (lang)
-            {
-                case "es":
-                    return "Adiós";
-                case "en":
-                    return "Goodbye";
-                case "fr":
-                    return "Au revoir";
-                case "it":
-                    return "Arrivederci";
-                case "pt":
-                    return "Até logo";
-                default:
-                    return string.Empty;
-            }
-        }
-        public static string GetParagraph(string lang)
-        {
-            switch (lang)
-            {
-                case "es":
-                    return @"Esto es un pequeño párrafo.
+            case "es":
+                return @"Esto es un pequeño párrafo.
 
 Espero que vaya como un cañón.
 
 Cigüeña pequeña.";
-                case "en":
-                    return @"This is a small paragraph.
+            case "en":
+                return @"This is a small paragraph.
 
 I hope it goes like a cannon.
 
 Small stork.";
-                case "fr":
-                    return @"Il s’agit d’un petit paragraphe.
+            case "fr":
+                return @"Il s’agit d’un petit paragraphe.
 
-J’espère que ça ira comme un canon.
+J’espère que ça va comme un canon.
 
 Petite cigogne.";
-                case "it":
-                    return @"Questo è un piccolo paragrafo.
+            case "it":
+                return @"Questo è un piccolo paragrafo.
 
 Spero che vada come un cannone.
 
 Piccola cicogna.";
-                case "pt":
-                    return @"Este é um pequeno parágrafo.
+            case "pt":
+                return @"Este é um pequeno parágrafo.
 
 Espero que seja como um canhão.
 
 Cegonha pequena.";
-                default:
-                    return string.Empty;
-            }
+            default:
+                return string.Empty;
         }
-        public static string Get4000CharactersInSomeParagraphs(string lang)
+    }
+    public static string Get4000CharactersInSomeParagraphs(string lang)
+    {
+        switch (lang)
         {
-            switch (lang)
-            {
-                case "es":
-                    return @"Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro.
+            case "es":
+                return @"Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro.
 
 Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro.
 
@@ -151,57 +277,57 @@ Todas estas borrascas que nos suceden son señales de que presto ha de serenar el
 Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas.
 
 Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se.";
-                case "en":
-                    return @"And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; For it is not possible for evil or good to be lasting, and hence it follows that, since evil has lasted long, good is at hand. Therefore you must not grieve over the misfortunes that befall me, for you have no share in them. And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another.""
+            case "en":
+                return @"And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and from this it follows that, evil having lasted a long time, good is already at hand. Therefore you need not be distressed by the misfortunes that befall me, for you have no part of them. And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another.""
 
-All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; For it is not possible for evil or good to be lasting, and hence it follows that, since evil has lasted long, good is at hand. Therefore you must not grieve over the misfortunes that befall me, for you have no share in them. And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another.""
+All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and from this it follows that, evil having lasted a long time, good is already at hand. Therefore you need not be distressed by the misfortunes that befall me, for you have no part of them. And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another.""
 
-All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; For it is not possible for evil or good to be lasting, and hence it follows that, since evil has lasted long, good is at hand. Therefore you must not grieve over the misfortunes that befall me, for you have no share in them. And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; For it is not possible for evil or good to be lasting, and hence it follows that, since evil has lasted long, good is at hand.
+All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and from this it follows that, evil having lasted a long time, good is already at hand. Therefore you need not be distressed by the misfortunes that befall me, for you have no part of them. And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and from this it follows that, evil having lasted a long time, good is already at hand.
 
-Therefore you must not grieve over the misfortunes that befall me, for you have no share in them. And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; For it is not possible for evil or good to be lasting, and hence it follows that, since evil has lasted long, good is at hand. Therefore you must not grieve over the misfortunes that befall me, for you have no share in them.
+Therefore you need not be distressed by the misfortunes that befall me, for you have no part of them. And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and from this it follows that, evil having lasted a long time, good is already at hand. Therefore you need not be distressed by the misfortunes that befall me, for you have no part of them.
 
-And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; For it is not possible for evil or good to be lasting, and hence it follows that, since evil has lasted long, good is at hand. Therefore you must not grieve over the misfortunes that befall me, for you have no share in them. And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; For it is not possible for evil or good to be lasting, and hence it follows that, since evil has lasted long, good is at hand. Therefore you must not grieve over the misfortunes that befall me, for you have no share in them. And when Don Quixote saw him in this manner, he said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and hence it is.";
-                case "fr":
-                    return @"Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, puisque le mal a duré longtemps, le bien est proche. C’est pourquoi vous ne devez pas vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. »
+And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and from this it follows that, evil having lasted a long time, good is already at hand. Therefore you need not be distressed by the misfortunes that befall me, for you have no part of them. And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and from this it follows that, evil having lasted a long time, good is already at hand. Therefore you need not be distressed by the misfortunes that befall me, for you have no part of them. And Don Quixote, seeing him in this manner, with signs of such sadness, said to him, ""Know, Sancho, that one man is not more than another if he does not do more than another."" All these storms that happen to us are signs that the weather will soon calm down and things will happen well to us; for it is not possible for evil or good to be lasting, and hence it is so.";
+            case "fr":
+                return @"Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, le mal ayant duré longtemps, le bien est déjà à portée de main. Vous n’avez donc pas à vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. »
 
-Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, puisque le mal a duré longtemps, le bien est proche. C’est pourquoi vous ne devez pas vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. »
+Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, le mal ayant duré longtemps, le bien est déjà à portée de main. Vous n’avez donc pas à vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. »
 
-Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, puisque le mal a duré longtemps, le bien est proche. C’est pourquoi vous ne devez pas vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, puisque le mal a duré longtemps, le bien est proche.
+Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, le mal ayant duré longtemps, le bien est déjà à portée de main. Vous n’avez donc pas à vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, le mal ayant duré longtemps, le bien est déjà à portée de main.
 
-C’est pourquoi vous ne devez pas vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, puisque le mal a duré longtemps, le bien est proche. C’est pourquoi vous ne devez pas vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part.
+Vous n’avez donc pas à vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, le mal ayant duré longtemps, le bien est déjà à portée de main. Vous n’avez donc pas à vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part.
 
-Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, puisque le mal a duré longtemps, le bien est proche. C’est pourquoi vous ne devez pas vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, puisque le mal a duré longtemps, le bien est proche. C’est pourquoi vous ne devez pas vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Don Quichotte, voyant ainsi cela, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien se passer pour nous ; car il n’est pas possible que le mal ou le bien soient durables, et c’est pourquoi il l’est.";
-                case "it":
-                    return @"E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro. Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; Infatti non è possibile che il male o il bene siano duraturi, e ne consegue che, poiché il male è durato a lungo, il bene è vicino. Perciò non dovete affliggervi per le disgrazie che mi colpiscono, perché non ne avete parte. E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro.
+Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, le mal ayant duré longtemps, le bien est déjà à portée de main. Vous n’avez donc pas à vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et il s’ensuit que, le mal ayant duré longtemps, le bien est déjà à portée de main. Vous n’avez donc pas à vous affliger des malheurs qui m’arrivent, car vous n’y avez aucune part. Et don Quichotte, le voyant ainsi, avec des signes de tant de tristesse, lui dit : « Sache, Sancho, qu’un homme n’est pas plus qu’un autre s’il ne fait pas plus qu’un autre. » Toutes ces tempêtes qui nous arrivent sont des signes que le temps va bientôt se calmer et que les choses vont bien nous arriver ; Car il n’est pas possible que le mal ou le bien soient durables, et c’est pourquoi il en est ainsi.";
+            case "it":
+                return @"E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"". Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; Non è possibile che il male o il bene siano duraturi, e da ciò consegue che, poiché il male è durato a lungo, il bene è già vicino. Perciò non devi essere angosciato dalle disgrazie che mi colpiscono, perché non ne hai parte. E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"".
 
-Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; Infatti non è possibile che il male o il bene siano duraturi, e ne consegue che, poiché il male è durato a lungo, il bene è vicino. Perciò non dovete affliggervi per le disgrazie che mi colpiscono, perché non ne avete parte. E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro.
+Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; Non è possibile che il male o il bene siano duraturi, e da ciò consegue che, poiché il male è durato a lungo, il bene è già vicino. Perciò non devi essere angosciato dalle disgrazie che mi colpiscono, perché non ne hai parte. E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"".
 
-Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; Infatti non è possibile che il male o il bene siano duraturi, e ne consegue che, poiché il male è durato a lungo, il bene è vicino. Perciò non dovete affliggervi per le disgrazie che mi colpiscono, perché non ne avete parte. E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro. Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; Infatti non è possibile che il male o il bene siano duraturi, e ne consegue che, poiché il male è durato a lungo, il bene è vicino.
+Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; Non è possibile che il male o il bene siano duraturi, e da ciò consegue che, poiché il male è durato a lungo, il bene è già vicino. Perciò non devi essere angosciato dalle disgrazie che mi colpiscono, perché non ne hai parte. E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"". Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; Non è possibile che il male o il bene siano duraturi, e da ciò consegue che, poiché il male è durato a lungo, il bene è già vicino.
 
-Perciò non dovete affliggervi per le disgrazie che mi colpiscono, perché non ne avete parte. E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro. Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; Infatti non è possibile che il male o il bene siano duraturi, e ne consegue che, poiché il male è durato a lungo, il bene è vicino. Perciò non dovete affliggervi per le disgrazie che mi colpiscono, perché non ne avete parte.
+Perciò non devi essere angosciato dalle disgrazie che mi colpiscono, perché non ne hai parte. E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"". Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; Non è possibile che il male o il bene siano duraturi, e da ciò consegue che, poiché il male è durato a lungo, il bene è già vicino. Perciò non devi essere angosciato dalle disgrazie che mi colpiscono, perché non ne hai parte.
 
-E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro. Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; Infatti non è possibile che il male o il bene siano duraturi, e ne consegue che, poiché il male è durato a lungo, il bene è vicino. Perciò non dovete affliggervi per le disgrazie che mi colpiscono, perché non ne avete parte. E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro. Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; Infatti non è possibile che il male o il bene siano duraturi, e ne consegue che, poiché il male è durato a lungo, il bene è vicino. Perciò non dovete affliggervi per le disgrazie che mi colpiscono, perché non ne avete parte. E quando don Chisciotte lo vide in questo modo, gli disse: — Sappiate, Sancio, che un uomo non è più di un altro, se non fa più di un altro. Tutte queste tempeste che ci accadono sono segni che il tempo si calmerà presto e le cose ci andranno bene; perché non è possibile che il male o il bene siano duraturi, e quindi lo è.";
-                case "pt":
-                    return @"E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"". Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; Pois não é possível que o mal ou o bem sejam duradouros e, portanto, segue-se que, uma vez que o mal durou muito, o bem está à mão. Portanto, não deveis lamentar os infortúnios que me caem, pois não tendes participação neles. E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"".
+E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"". Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; Non è possibile che il male o il bene siano duraturi, e da ciò consegue che, poiché il male è durato a lungo, il bene è già vicino. Perciò non devi essere angosciato dalle disgrazie che mi colpiscono, perché non ne hai parte. E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"". Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; Non è possibile che il male o il bene siano duraturi, e da ciò consegue che, poiché il male è durato a lungo, il bene è già vicino. Perciò non devi essere angosciato dalle disgrazie che mi colpiscono, perché non ne hai parte. E don Chisciotte, vedendolo in questo modo, con segni di tanta tristezza, gli disse: ""Sappi, Sancio, che un uomo non è più di un altro se non fa più di un altro"". Tutte queste tempeste che ci capitano sono segni che il tempo si calmerà presto e le cose andranno bene a noi; poiché non è possibile che il male o il bene siano duraturi, e quindi è così.";
+            case "pt":
+                return @"E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro». Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros, e disso se segue que, tendo o mal durado muito tempo, o bem já está próximo. Portanto, você não precisa ficar angustiado com os infortúnios que me acontecem, pois você não tem parte deles. E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro».
 
-Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; Pois não é possível que o mal ou o bem sejam duradouros e, portanto, segue-se que, uma vez que o mal durou muito, o bem está à mão. Portanto, não deveis lamentar os infortúnios que me caem, pois não tendes participação neles. E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"".
+Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros, e disso se segue que, tendo o mal durado muito tempo, o bem já está próximo. Portanto, você não precisa ficar angustiado com os infortúnios que me acontecem, pois você não tem parte deles. E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro».
 
-Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; Pois não é possível que o mal ou o bem sejam duradouros e, portanto, segue-se que, uma vez que o mal durou muito, o bem está à mão. Portanto, não deveis lamentar os infortúnios que me caem, pois não tendes participação neles. E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"". Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; Pois não é possível que o mal ou o bem sejam duradouros e, portanto, segue-se que, uma vez que o mal durou muito, o bem está à mão.
+Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros, e disso se segue que, tendo o mal durado muito tempo, o bem já está próximo. Portanto, você não precisa ficar angustiado com os infortúnios que me acontecem, pois você não tem parte deles. E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro». Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros, e disso se segue que, tendo o mal durado muito tempo, o bem já está próximo.
 
-Portanto, não deveis lamentar os infortúnios que me caem, pois não tendes participação neles. E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"". Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; Pois não é possível que o mal ou o bem sejam duradouros e, portanto, segue-se que, uma vez que o mal durou muito, o bem está à mão. Portanto, não deveis lamentar os infortúnios que me caem, pois não tendes participação neles.
+Portanto, você não precisa ficar angustiado com os infortúnios que me acontecem, pois você não tem parte deles. E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro». Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros, e disso se segue que, tendo o mal durado muito tempo, o bem já está próximo. Portanto, você não precisa ficar angustiado com os infortúnios que me acontecem, pois você não tem parte deles.
 
-E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"". Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; Pois não é possível que o mal ou o bem sejam duradouros e, portanto, segue-se que, uma vez que o mal durou muito, o bem está à mão. Portanto, não deveis lamentar os infortúnios que me caem, pois não tendes participação neles. E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"". Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; Pois não é possível que o mal ou o bem sejam duradouros e, portanto, segue-se que, uma vez que o mal durou muito, o bem está à mão. Portanto, não deveis lamentar os infortúnios que me caem, pois não tendes participação neles. E quando Dom Quixote o viu assim, disse-lhe: ""Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro"". Todas essas tempestades que nos acontecem são sinais de que o tempo logo se acalmará e as coisas nos acontecerão bem; pois não é possível que o mal ou o bem sejam duradouros, e assim é.";
-                default:
-                    return string.Empty;
-            }
+E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro». Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros, e disso se segue que, tendo o mal durado muito tempo, o bem já está próximo. Portanto, você não precisa ficar angustiado com os infortúnios que me acontecem, pois você não tem parte deles. E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro». Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros, e disso se segue que, tendo o mal durado muito tempo, o bem já está próximo. Portanto, você não precisa ficar angustiado com os infortúnios que me acontecem, pois você não tem parte deles. E D. Quixote, vendo-o assim, com sinais de tanta tristeza, disse-lhe: «Sabe, Sancho, que um homem não é mais do que outro se não fizer mais do que outro». Todas essas tempestades que nos acontecem são sinais de que o tempo logo vai se acalmar e as coisas vão nos acontecer bem; pois não é possível que o mal ou o bem sejam duradouros e, portanto, é assim.";
+            default:
+                return string.Empty;
         }
+    }
 
-        public static string Get6093CharactersInsomeParagraphs(string lang)
+    public static string Get6093CharactersInsomeParagraphs(string lang)
+    {
+        switch (lang)
         {
-            switch (lang)
-            {
-                case "es":
-                    return @"Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas.
+            case "es":
+                return @"Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas.
 
 Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas.
 
@@ -210,8 +336,8 @@ Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le di
 Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas.
 
 Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que";
-                case "en":
-                    return @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas.
+            case "en":
+                return @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas.
 
 And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas.
 
@@ -220,61 +346,61 @@ And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sa
 And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas.
 
 And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that";
-                default:
-                    return string.Empty;
-            }
+            default:
+                return string.Empty;
         }
-        public static string Get6093CharactersInOneParagraph(string lang)
+    }
+    public static string Get6093CharactersInOneParagraph(string lang)
+    {
+        switch (lang)
         {
-            switch (lang)
-            {
-                case "es":
-                    return @"Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que";
-                case "en":
-                    return @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that the evil or good are durable, and from here it follows that, having lasted much evil, good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that";
-                default:
-                    return string.Empty;
-            }
+            case "es":
+                return @"Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que";
+            case "en":
+                return @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that the evil or good are durable, and from here it follows that, having lasted much evil, good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that";
+            default:
+                return string.Empty;
         }
-        public static List<List<TranslationInfo>> Get6093CharactersInOneParagraphSimulatedRawResponse(string lang)
+    }
+    public static List<List<TranslationInfo>> Get6093CharactersInOneParagraphSimulatedRawResponse(string lang)
+    {
+        switch (lang)
         {
-            switch (lang)
-            {
-                case "en":
-                    return new List<List<TranslationInfo>>
+            case "en":
+                return new List<List<TranslationInfo>>
+                {
+                    new List<TranslationInfo>
                     {
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that the"),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"Evil or good are durable, and from here it follows that, having lasted much evil, good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that"),
-                            }
-                    };
-                default:
-                    return null;
-            }
-        }
-        public static List<List<TranslationInfo>> GetNovedadesAndMoreSimulatedRawResponse(string lang)
-        {
-            switch (lang)
-            {
-                case "en":
-                    return new List<List<TranslationInfo>>
+                        new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that the"),
+                    },
+                    new List<TranslationInfo>
                     {
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"| 1 | This would be the first
+                        new TranslationInfo(lang, @"Evil or good are durable, and from here it follows that, having lasted much evil, good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that"),
+                    }
+                };
+            default:
+                return null;
+        }
+    }
+    public static List<List<TranslationInfo>> GetNovedadesAndMoreSimulatedRawResponse(string lang)
+    {
+        switch (lang)
+        {
+            case "en":
+                return new List<List<TranslationInfo>>
+                {
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"| 1 | This would be the first
 text to translate
 | 2 | This would be the second.
 | 3 | Nothing more
 | 4 | More things
 | 5 |"),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"| 6 | featured!
+                    },
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"| 6 | featured!
 New presentation with the 'Synthesis of cast' chart legend
 New graphic presentation with icons and images
 New system of report filters
@@ -362,10 +488,10 @@ Implementation and use of certification of code.
 Errors and improvements of performance/rendering screens
 New order of introduction of audit data
 Search for audits to start hidden unless the user specifies another"),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"behavior
+                    },
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"behavior
 In the home panel display scrollbar below when the screen resolution is small
 Change order of auxiliary within the menu and get the 'State' to 'Genetics'
 To create auxiliary associated search screens
@@ -443,10 +569,10 @@ New report and basic audit screen
 Elimination of bodily state graph
 New report that shows the correct values on a single chart
 New EMD range up to Ideal"),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"Exporter of multiple audits to Excel
+                    },
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"Exporter of multiple audits to Excel
 Button to double audits
 Minimum value BoxPlot EGD stipulated to 5
 Configuration of ideal values for BoxPlot
@@ -485,49 +611,49 @@ Limits by cycle rather than by cycle group
 Roles management screen
 Statistical audit graphics
 Statistical audit detail"),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"| 7 | Last thing to translate;."),
-                            }
-                    };
-                default:
-                    return null;
-            }
-        }
-        public static List<List<TranslationInfo>> Get6093CharactersInsomeParagraphsSimulatedRawResponse(string lang)
-        {
-            switch (lang)
-            {
-                case "en":
-                    return new List<List<TranslationInfo>>
+                    },
+                    new List<TranslationInfo>
                     {
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
-                            },
-                            new List<TranslationInfo>
-                            {
-                                    new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that"),
-                            }
-                    };
-                default:
-                    return null;
-            }
+                        new TranslationInfo(lang, @"| 7 | Last thing to translate;."),
+                    }
+                };
+            default:
+                return null;
         }
-        public static string GetFarmingControlNovedades() => @"¡Destacadas!
+    }
+    public static List<List<TranslationInfo>> Get6093CharactersInsomeParagraphsSimulatedRawResponse(string lang)
+    {
+        switch (lang)
+        {
+            case "en":
+                return new List<List<TranslationInfo>>
+                {
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
+                    },
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
+                    },
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
+                    },
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas."),
+                    },
+                    new List<TranslationInfo>
+                    {
+                        new TranslationInfo(lang, @"And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that, having lasted much evil, the good is already near. So, you should not congojarte by the misfortunes that happen to me, because you do not have part Dellas. And, seeing Don Quixote in that way, with such sadness, he said to him, know, Sancho, that he is not a man more than another if he does nothing but another. All these storms that happen to us are signs that Presto has to calm the time and things have to happen well; Because it is not possible that evil or good are durable, and from here it follows that"),
+                    }
+                };
+            default:
+                return null;
+        }
+    }
+    public static string GetFarmingControlNovedades() => @"¡Destacadas!
 Nueva presentación con leyenda del gráfico 'Síntesis de reparto'
 Nueva presentación gráfica con iconos e imágenes
 Nuevo sistema de presentación de filtros de informes
@@ -731,5 +857,4 @@ Limites por grupo de ciclo en lugar de por ciclo
 Pantalla de gestión de roles
 Estadística auditoría gráficos
 Estadística Auditoría detalle";
-    }
 }

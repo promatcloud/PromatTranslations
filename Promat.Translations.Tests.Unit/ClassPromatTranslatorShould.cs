@@ -24,11 +24,11 @@ namespace Promat.Translations.Tests.Unit
             inSpanish.languageName.Should().NotBe(inEnglish.languageName);
         }
         [Test]
-        public void ThrowExceptionWhenCallTranslateAsyncWithoutAnAzureApiKey()
+        public async Task ThrowExceptionWhenCallTranslateAsyncWithoutAnAzureApiKey()
         {
             Func<Task> translateAction = async () => await PromatTranslator.TranslateAsync("some text", Languages.Ingles);
 
-            translateAction.Should().Throw<ArgumentException>();
+            await translateAction.Should().ThrowAsync<ArgumentException>();
         }
     }
 }
