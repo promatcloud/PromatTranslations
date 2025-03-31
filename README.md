@@ -1,13 +1,13 @@
 <h1 align="center">
-<img src="https://github.com/promatcloud/Branding/blob/master/icons/PromatTranslations/promatTranslations.512.png" alt="promat" width="256"/>
+<img src="https://github.com/promatcloud/Branding/blob/master/icons/PromatTranslations/promatTranslations.512.png?raw=true" alt="promat" width="256"/>
  <br/>
  PromatTranslations
 </h1>
 
 <div align="center">
- 
-[![Build status](https://ci.appveyor.com/api/projects/status/94tj89iclsyg1c7l?svg=true)](https://ci.appveyor.com/project/promatcloud/promattranslations)
-[![Nuget Downloads](https://buildstats.info/nuget/PromatTranslations)](https://www.nuget.org/packages/PromatTranslations/)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/94tj89iclsyg1c7l?svg=true)](https://ci.appveyor.com/project/promatcloud/promattranslations) 
+[![NuGet version](https://badge.fury.io/nu/PromatTranslations.svg)](https://badge.fury.io/nu/PromatTranslations)
 
 </div>
 
